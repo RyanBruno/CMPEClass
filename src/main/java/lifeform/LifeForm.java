@@ -3,8 +3,7 @@ package lifeform;
 /**
  * Holds information about a LifeForm.
  *
- * SWE200 
- * Programmers: Ryan Bruno, Richard Clapper
+ * SWE200 Programmers: Ryan Bruno, Richard Clapper
  */
 public class LifeForm {
 
@@ -35,6 +34,27 @@ public class LifeForm {
    */
   public int getCurrentLifePoints() {
     return currentLifePoints;
+  }
+
+  /**
+   * Reduced LifeForm's life points by the damage A LifeForm cannot have
+   * life points less than zero. 
+   * 
+   * @param damage
+   */
+  public void takeHit(int damage) {
+    currentLifePoints -= damage;
+    if (currentLifePoints < 0) {
+      currentLifePoints = 0;
+    }
+  }
+  
+  /**
+   * 
+   * @param points The LifeForm's lifePoints.
+   */
+  public void setLifePoints(int points) {
+    currentLifePoints = points;
   }
 
 }

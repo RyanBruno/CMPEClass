@@ -2,19 +2,19 @@ task zipzip(type: Zip) {
   archiveName = 'lab0-name.zip'
   from projectDir
   excludes = ["**/.gradle"]
-  includes=["src/**/*"]
+  includes=["src/**/*", "build.gradle", "instructor-tests.gradle"]
   destinationDir = file("${buildDir}/dist")
 }
 
 task testZip(type: Zip) {
-  archiveName = 'lab1-instructor-tests.zip'
+  archiveName = 'lab2-instructor-tests.zip'
   from sourceSets.test.output
   excludes = ["**/.gradle"]
   destinationDir = file("${buildDir}/dist")
 }
 
 task downloadFile(type: Download) {
-  src 'https://www.dropbox.com/s/niker86hijyi6ag/lab1-instructor-tests.zip?dl=1'
+  src 'https://www.dropbox.com/s/ytzd388gab3q5a9/lab2-instructor-tests.zip?dl=1'
   dest new File(buildDir, 'dist/instructor-tests.zip')
 }
 
