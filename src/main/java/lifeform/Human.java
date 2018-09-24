@@ -6,12 +6,16 @@ public class Human extends LifeForm {
 
   public Human(String name, int lifePoints, int armor) {
     super(name, lifePoints);
-    this.armor = armor;
+    this.armor = armor > 0 ? armor : 0;
   }
 
   @Override
   public void takeHit(int damage) {
-    // TODO
+    armor -= damage;
+    if (armor < 0) {
+      super.takeHit(armor * -1);
+      armor = 0;
+    }
   }
 
   /**
@@ -32,5 +36,4 @@ public class Human extends LifeForm {
       armor = points;
     }
   }
-
 }

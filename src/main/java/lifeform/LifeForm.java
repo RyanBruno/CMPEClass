@@ -48,13 +48,5 @@ public class LifeForm {
       currentLifePoints = 0;
     }
   }
-  
-  /**
-   * 
-   * @param points The LifeForm's lifePoints.
-   */
-  public void setLifePoints(int points) {
-    currentLifePoints = points;
-  }
 
 }

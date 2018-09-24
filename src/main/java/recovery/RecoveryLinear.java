@@ -13,6 +13,9 @@ public class RecoveryLinear implements RecoveryBehavior {
   
   @Override
   public int calculateRecovery(int currentLife, int maxLife) {
+    if (currentLife <= 0) {
+      return 0;
+    }
     return maxLife - currentLife > step ? step + currentLife : maxLife;
   }
 

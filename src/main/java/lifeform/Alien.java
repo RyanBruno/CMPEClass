@@ -68,7 +68,7 @@ public class Alien extends LifeForm {
    * Recovers LifePoints based on the RecoveryBehavior.
    */
   protected void recover() {
-    this.setLifePoints(recoveryBehavior.calculateRecovery(this.getCurrentLifePoints(), maxLifePoints));
+    super.takeHit((recoveryBehavior.calculateRecovery(getCurrentLifePoints(), maxLifePoints) - getCurrentLifePoints()) * -1);
   }
 
 }
