@@ -14,11 +14,11 @@ public class Alien extends LifeForm {
    * have an attack strength of 10 and a recovery Rate of 0 (will never recover).
    * 
    * @param name
-   * @param maxHP
+   * @param maxHp
    */
-  public Alien(String name, int maxHP) {
-    super(name, maxHP);
-    maxLifePoints = maxHP;
+  public Alien(String name, int maxHp) {
+    super(name, maxHp);
+    maxLifePoints = maxHp;
     recoveryBehavior = new RecoveryNone();
     recoveryRate = 0;
   }
@@ -28,11 +28,11 @@ public class Alien extends LifeForm {
    * attack strength of 10 and a recovery Rate of 0 (will never recover).
    * 
    * @param name
-   * @param maxHP
+   * @param maxHp
    * @param behavior
    */
-  public Alien(String name, int maxHP, RecoveryBehavior behavior) {
-    this(name, maxHP);
+  public Alien(String name, int maxHp, RecoveryBehavior behavior) {
+    this(name, maxHp);
     this.recoveryBehavior = behavior;
   }
 
@@ -41,12 +41,12 @@ public class Alien extends LifeForm {
    * an attack strength of 10, by default.
    * 
    * @param name
-   * @param maxHP
+   * @param maxHp
    * @param behavior
    * @param recoveryRate
    */
-  public Alien(String name, int maxHP, RecoveryBehavior behavior, int recoveryRate) {
-    this(name, maxHP, behavior);
+  public Alien(String name, int maxHp, RecoveryBehavior behavior, int recoveryRate) {
+    this(name, maxHp, behavior);
     this.recoveryRate = recoveryRate;
   }
 
@@ -68,7 +68,8 @@ public class Alien extends LifeForm {
    * Recovers LifePoints based on the RecoveryBehavior.
    */
   protected void recover() {
-    super.takeHit((recoveryBehavior.calculateRecovery(getCurrentLifePoints(), maxLifePoints) - getCurrentLifePoints()) * -1);
+    takeHit((recoveryBehavior.calculateRecovery(getCurrentLifePoints(), maxLifePoints)
+        - getCurrentLifePoints()) * -1);
   }
 
 }

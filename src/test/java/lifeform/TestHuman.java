@@ -37,6 +37,7 @@ public class TestHuman {
 
   }
 
+  @Test
   public void testInvalidArmorPoints() {
     Human human = new Human("Bob", 100, -100);
     assertEquals(0, human.getArmorPoints());
