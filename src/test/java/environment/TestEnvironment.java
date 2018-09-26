@@ -7,7 +7,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import lifeform.LifeForm;
+import lifeform.MockLifeForm;
 
 /**
  * Tests the initialization of Environment.
@@ -29,10 +29,10 @@ public class TestEnvironment {
   public void testAddLifeForm() {
     Environment environment = new Environment(10, 10);
 
-    assertTrue(environment.addLifeForm(new LifeForm("Bob", 50), 4, 7));
+    assertTrue(environment.addLifeForm(new MockLifeForm("Bob", 50), 4, 7));
     assertEquals("Bob", environment.theCells[4][7].getLifeForm().getName());
 
-    assertFalse(environment.addLifeForm(new LifeForm("Jim", 60), 4, 7));
+    assertFalse(environment.addLifeForm(new MockLifeForm("Jim", 60), 4, 7));
   }
 
   /**
@@ -41,11 +41,11 @@ public class TestEnvironment {
   @Test
   public void testBorderCase() {
     Environment environment = new Environment(10, 10);
-    assertTrue(environment.addLifeForm(new LifeForm("Bob", 50), 4, 7));
-    assertFalse(environment.addLifeForm(new LifeForm("Jim", 50), 11, 7));
-    assertTrue(environment.addLifeForm(new LifeForm("Obama", 5), 4, 1));
-    assertFalse(environment.addLifeForm(new LifeForm("Richard", -1), -2, -7));
-    assertFalse(environment.addLifeForm(new LifeForm("Ryan", Integer.MAX_VALUE), 4, -2000));
+    assertTrue(environment.addLifeForm(new MockLifeForm("Bob", 50), 4, 7));
+    assertFalse(environment.addLifeForm(new MockLifeForm("Jim", 50), 11, 7));
+    assertTrue(environment.addLifeForm(new MockLifeForm("Obama", 5), 4, 1));
+    assertFalse(environment.addLifeForm(new MockLifeForm("Richard", -1), -2, -7));
+    assertFalse(environment.addLifeForm(new MockLifeForm("Ryan", Integer.MAX_VALUE), 4, -2000));
   }
 
   /**
@@ -55,7 +55,7 @@ public class TestEnvironment {
   public void testRemoveLifeForm() {
     Environment environment = new Environment(10, 10);
 
-    environment.addLifeForm(new LifeForm("Bob", 50), 4, 7);
+    environment.addLifeForm(new MockLifeForm("Bob", 50), 4, 7);
 
     environment.removeLifeForm(4, 7);
     environment.removeLifeForm(4, 7);

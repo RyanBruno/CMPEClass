@@ -5,7 +5,7 @@ package lifeform;
  *
  * SWE200 Programmers: Ryan Bruno, Richard Clapper
  */
-public class LifeForm {
+public abstract class LifeForm {
 
   private String myName;
 

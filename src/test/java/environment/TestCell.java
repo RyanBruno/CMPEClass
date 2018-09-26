@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import environment.Cell;
 import lifeform.LifeForm;
+import lifeform.MockLifeForm;
 
 /**
  * Tests the Cell class.
@@ -31,7 +32,7 @@ public class TestCell {
    */
   @Test
   public void testAddLifeForm() {
-    LifeForm bob = new LifeForm("Bob", 40);
+    LifeForm bob = new MockLifeForm("Bob", 40);
 
     Cell cell = new Cell();
 
@@ -45,8 +46,8 @@ public class TestCell {
    */
   @Test
   public void testAddingTwoEntities() {
-    LifeForm bob = new LifeForm("Bob", 40);
-    LifeForm fred = new LifeForm("fred", 40);
+    LifeForm bob = new MockLifeForm("Bob", 40);
+    LifeForm fred = new MockLifeForm("fred", 40);
 
     Cell cell = new Cell();
 
@@ -64,7 +65,7 @@ public class TestCell {
    */
   @Test
   public void testRemoveLifeForm() {
-    LifeForm bob = new LifeForm("Bob", 40);
+    LifeForm bob = new MockLifeForm("Bob", 40);
 
     Cell cell = new Cell();
 
@@ -74,7 +75,7 @@ public class TestCell {
 
     cell.removeLifeForm();
 
-    LifeForm fred = new LifeForm("fred", 40);
+    LifeForm fred = new MockLifeForm("fred", 40);
     
     success = cell.addLifeForm(fred);
     assertTrue(success);
