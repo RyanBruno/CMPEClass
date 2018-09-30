@@ -12,7 +12,7 @@ public class Alien extends LifeForm {
   /**
    * Create an Alien with a RecoveryBehavior of RecoveryNone. By default Aliens
    * have an attack strength of 10 and a recovery Rate of 0 (will never recover).
-   * 
+   *
    * @param name
    * @param maxHp
    */
@@ -26,7 +26,7 @@ public class Alien extends LifeForm {
   /**
    * Create an Alien with the given RecoveryBehavior. By default Aliens have an
    * attack strength of 10 and a recovery Rate of 0 (will never recover).
-   * 
+   *
    * @param name
    * @param maxHp
    * @param behavior
@@ -39,7 +39,7 @@ public class Alien extends LifeForm {
   /**
    * Create an Alien with the given RecoveryBehavior and RecoveryRate. Aliens have
    * an attack strength of 10, by default.
-   * 
+   *
    * @param name
    * @param maxHp
    * @param behavior

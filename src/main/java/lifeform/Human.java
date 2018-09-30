@@ -28,7 +28,7 @@ public class Human extends LifeForm {
   /**
    * Sets armor points. Armor points cannot be less than 0. If a value less than 0
    * is given, the armor points remain unchanged.
-   * 
+   *
    * @param points
    */
   public void setArmorPoints(int points) {

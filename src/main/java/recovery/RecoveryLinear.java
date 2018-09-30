@@ -1,7 +1,7 @@
 package recovery;
 
 public class RecoveryLinear implements RecoveryBehavior {
-  
+
   private int step;
 
   /**
@@ -10,7 +10,7 @@ public class RecoveryLinear implements RecoveryBehavior {
   public RecoveryLinear(int step) {
     this.step = step;
   }
-  
+
   @Override
   public int calculateRecovery(int currentLife, int maxLife) {
     if (currentLife <= 0) {

@@ -8,6 +8,4 @@ public interface RecoveryBehavior {
    * @return the amount of lifepoints to be recovered.
    */
   int calculateRecovery(int currentLife, int maxLife);
-  
-  
 }

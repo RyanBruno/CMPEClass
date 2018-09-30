@@ -38,8 +38,8 @@ public abstract class LifeForm {
 
   /**
    * Reduced LifeForm's life points by the damage A LifeForm cannot have
-   * life points less than zero. 
-   * 
+   * life points less than zero.
+   *
    * @param damage
    */
   public void takeHit(int damage) {
