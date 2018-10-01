@@ -11,15 +11,30 @@ public abstract class LifeForm {
 
   private int currentLifePoints;
 
+  private int attackStrength;
+
   /**
-   * Creates and instance of Lifeform.
-   * 
+   * Creates and instance of Lifeform with default attack strength of 1.
+   *
    * @param name The name of the Lifeform
    * @param lifePoints The Starting lifepoints of the Lifeform
    */
   public LifeForm(String name, int lifePoints) {
     myName = name;
     currentLifePoints = lifePoints;
+    attackStrength = 10;
+  }
+
+  /**
+   * Creates and instance of Lifeform.
+   * 
+   * @param name The name of the Lifeform.
+   * @param points The Starting lifepoints of the Lifeform.
+   * @param attack The Attack Strength.
+   */
+  public LifeForm(String name, int points, int attack) {
+    this(name, points);
+    this.attackStrength = attack;
   }
 
   /**
@@ -37,8 +52,8 @@ public abstract class LifeForm {
   }
 
   /**
-   * Reduced LifeForm's life points by the damage A LifeForm cannot have
-   * life points less than zero.
+   * Reduced LifeForm's life points by the damage A LifeForm cannot have life
+   * points less than zero.
    *
    * @param damage
    */
@@ -49,4 +64,22 @@ public abstract class LifeForm {
     }
   }
 
+  /**
+   * Attack another LifeForm with the Attack Strength.
+   *
+   * @param opponent
+   */
+  public void attack​(LifeForm opponent) {
+    if (currentLifePoints <= 0) {
+      return;
+    }
+    opponent.takeHit(attackStrength);
+  }
+
+  /**
+   * @return The LifeForm's Attack Strength.
+   */
+  public int getAttackStrength() {
+    return attackStrength;
+  }
 }

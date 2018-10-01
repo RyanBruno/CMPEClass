@@ -38,4 +38,22 @@ public class TestLifeForm {
     assertEquals(20, entity.getCurrentLifePoints());
   }
 
+  @Test
+  public void testAttack() {
+    LifeForm bob = new MockLifeForm("Bob", 40);
+    LifeForm rob = new MockLifeForm("Rob", 40);
+
+    bob.attack​(rob);
+    assertEquals(30, rob.getCurrentLifePoints());
+  }
+
+  @Test
+  public void testAttackWhenDead() {
+    LifeForm bob = new MockLifeForm("Bob", 0);
+    LifeForm rob = new MockLifeForm("Rob", 40);
+
+    bob.attack​(rob);
+    assertEquals(40, rob.getCurrentLifePoints());
+  }
+
 }

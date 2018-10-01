@@ -6,4 +6,8 @@ public class MockLifeForm extends LifeForm {
     super(name, lifePoints);
   }
 
+  public MockLifeForm(String name, int lifePoints, int attack) {
+    super(name, lifePoints, attack);
+  }
+
 }
