@@ -20,7 +20,7 @@ public class SimpleTimer extends Thread implements Timer {
   }
   
   @Override
-  public void addTimeObserver​(TimerObserver observer) {
+  public void addTimeObserver(TimerObserver observer) {
     obs.add(observer);
   }
   
@@ -31,6 +31,7 @@ public class SimpleTimer extends Thread implements Timer {
   
   @Override
   public void timeChanged() {
+    round += 1;
     obs.forEach((o) -> o.updateTime​(round));
   }
   
@@ -42,7 +43,7 @@ public class SimpleTimer extends Thread implements Timer {
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
-      round +=1;
+      timeChanged();
     }
   }
   

@@ -84,7 +84,7 @@ public class Alien extends LifeForm implements TimerObserver {
    * @param time
    */
   public void updateTime​(int time) {
-    if (time % recoveryRate == 0) {
+    if (recoveryRate != 0 && time % recoveryRate == 0) {
       recover();
     }
   }
